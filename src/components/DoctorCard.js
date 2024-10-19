@@ -1,3 +1,5 @@
+import '../styles/Doctors.css';
+
 function DoctorCard({
     doctor,
     onEdit,
@@ -7,7 +9,12 @@ function DoctorCard({
     return (
         <div className="doctor-card">
             <p>
-                {doctor.name} - {doctor.specialty}
+                <span>Name: </span>
+                {doctor.name}
+            </p>
+            <p>
+                <span>Specialty: </span>
+                {doctor.specialty}
             </p>
             <div className="btn-container">
                 <button onClick={() => onEdit(doctor)}>

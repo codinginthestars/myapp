@@ -1,4 +1,4 @@
-import './Appointment.css';
+import '../styles/Appointment.css';
 
 function AppointmentCard({
     appointment,

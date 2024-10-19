@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import AppointmentCard from './AppointmentCard';
-import './Appointment.css';
+import '../styles/Appointment.css';
 
 
 function Appointments() {
@@ -19,7 +19,7 @@ function Appointments() {
     useEffect(() => {
         axios.get('http://localhost:5000/appointments')
             .then(response => setAppointments(response.data))
-            .catch(error => console.error('Error fetching appointments: ', error));
+            .catch(error => console.error('Error fetching appointments:', error));
     }, []);
 
     const handleAddAppointment = (e) => {

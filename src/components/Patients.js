@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import PatientCard from './PatientCard';
+import '../styles/Patients.css';
 
 function Patients() {
     const [patients, setPatients] = useState([]);
@@ -64,13 +65,13 @@ function Patients() {
 
     return (
         <div className='patient-main'>
-            <div className='form-sections  '>
+            <div className='add-form'>
                 <h4>
                     {
                         isEditMode ? 'Edit Patient' : 'Add New Patient'
                     }
                 </h4>
-                <form onSubmit={isEditMode ? (e) => handleUpdatePatient(selectedPatient._id, e) : handleAddPatient}>
+                <form className='patient-form' onSubmit={isEditMode ? (e) => handleUpdatePatient(selectedPatient._id, e) : handleAddPatient}>
                     
                     <label>Name: </label>
                     <input 
@@ -117,18 +118,15 @@ function Patients() {
                 </form>
             </div>
 
-            <div className='patients-section  '>
-                <h3 style={{ textAlign: 'center' }}>
-                    Patients({patients.length})
-                </h3>
-
+            <div className='patients'>
+                <h3>Patients({ patients.length })</h3>
                 <div className='patient-list'>
                     {patients.map(patient => (
                         <PatientCard 
-                        key={patient._id}
-                        patient={patient}
-                        onEdit={handleEditPatient}
-                        onDelete={handleDeletePatient} />
+                            key={patient._id}
+                            patient={patient}
+                            onEdit={handleEditPatient}
+                            onDelete={handleDeletePatient} />
                     ))}
                 </div>
             </div>

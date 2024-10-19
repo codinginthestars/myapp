@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import DoctorCard from './DoctorCard.js';
+import DoctorCard from './DoctorCard';
+import '../styles/Doctors.css';
 
 function Doctors() {
     const [doctors, setDoctors] = useState([]);
@@ -16,6 +17,7 @@ function Doctors() {
 
     const handleAddDoctor = (e) => {
             e.preventDefault();
+
             axios.post('http://localhost:5000/doctors/add', newDoctor)
                 .then(response => {
                     console.log('doc', response.data);
@@ -68,14 +70,14 @@ function Doctors() {
     };
 
     return (
-        <div className='main-doc-container  '>
-            <div className='form-sections  '>
+        <div className='main-doc-container'>
+            <div className='add-form'>
                 <h4>
                     {
                         isEditMode ? 'Edit Doctor' : 'Add New Doctor'
                     }
                 </h4>
-                <form onSubmit={isEditMode ? (e) => handleUpdateDoctor(selectedDoctor._id, e) : handleAddDoctor}>
+                <form onSubmit={isEditMode ? (e) => handleUpdateDoctor(selectedDoctor._id, e) : handleAddDoctor} className='doctor-form'>
                     <label>Name: </label>
                     <input 
                         type='text' 
@@ -107,15 +109,15 @@ function Doctors() {
                     </button>
                 </form>
             </div>
-            <div className='doctors-section  '>
-                <h3>Doctors({doctors.length}) </h3>
+            <div className='doctors'>
+                <h3>Doctors({ doctors.length })</h3>
                 <div className='doctor-list'>
                     {doctors.map(doctor => (
                         <DoctorCard
-                        key={doctor._id}
-                        doctor={doctor}
-                        onEdit={handleEditDoctor}
-                        onDelete={handleDeleteDoctor} />
+                            key={doctor._id}
+                            doctor={doctor}
+                            onEdit={handleEditDoctor}
+                            onDelete={handleDeleteDoctor} />
                     ))}
                 </div>
             </div>

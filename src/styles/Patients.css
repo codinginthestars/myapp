@@ -1,0 +1,93 @@
+.patient-main {
+    display: flex;
+    flex-direction: wrap;
+    justify-content: space-around;
+}
+
+.add-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 30vw;
+}
+
+.add-form h4 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.patient-form {
+    max-width: 400px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 40px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.patient-form label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.patient-form input {
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.patient-form button {
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.patient-form button:hover {
+    background-color: #0056b3;
+}
+
+.patients {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 30vw;
+}
+
+.patients h3 {
+    font-size: 22px;
+    margin: 35px 0 5px;
+}
+
+.patient-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 300px;
+    padding: 16px;
+    margin: 14px 0;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.patient-card:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+span {
+    font-weight: bold;
+}
+
+.patient-card h4 {
+    
+}
